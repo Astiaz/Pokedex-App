@@ -8,12 +8,12 @@ export const Pokemon = () => {
     const {data, hasError} = useFetch(`https://pokeapi.co/api/v2/pokemon/${name}`);
 
     return (
-        <>
+        <div className="container min-vh-100 d-flex align-items-center justify-content-center">
             {
                 (!data) 
                     ? <Loading hasError={hasError}/>
                     : <PokemonInfo data={data} {...data}/>
             }
-        </>
+        </div>
     )
 }
